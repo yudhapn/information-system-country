@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-secondary"><strong>Fun Fact About Countries</strong></h1>
+  <div class="row justify-content-center gap-3">
+    <button
+      *ngIf="currentCountryState != homePageState.TOP_COUNTRIES"
+      type="button"
+      class="btn btn-dark col-2"
+      (click)="onChangeCountryState(homePageState.TOP_COUNTRIES)"
+    >
+      Go Back to Homepage
+    </button>
+    <button
+      *ngIf="currentCountryState != homePageState.ALL_COUNTRIES"
+      type="button"
+      class="btn btn-dark col-2"
+      (click)="onChangeCountryState(homePageState.ALL_COUNTRIES)"
+    >
+      Show all of Countries
+    </button>
+  </div>
+  <app-top-countries
+    *ngIf="currentCountryState == homePageState.TOP_COUNTRIES"
+    [mostPopulatedCountries]="mostPopulatedCountries"
+    [largestCountries]="largestCountries"
+    [largestGdpCountries]="largestGdpCountries"
+  ></app-top-countries>
+  <app-all-countries
+    *ngIf="currentCountryState == homePageState.ALL_COUNTRIES"
+    [allCountries]="allCountries"
+  ></app-all-countries>
+</div>

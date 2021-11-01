@@ -1,0 +1,7 @@
+.country-block {
+    background-color: #00B846;
+}
+
+.country-block:hover {
+    background-color: #ffd600;
+  }

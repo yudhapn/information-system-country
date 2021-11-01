@@ -1,0 +1,15 @@
+<h2><strong>List of All Countries in Our Database</strong></h2>
+<div class="group">
+  <a
+    *ngFor="let country of allCountries"
+    class="country-unit"
+    [routerLink]="['/country-detail', country.id]"
+  >
+    <div class="country-block">
+      <h4>{{ country.name }}</h4>
+      <p>Capital</p>
+      <p>({{ country.capital }})</p>
+    </div>
+  </a>
+</div>
+<br />

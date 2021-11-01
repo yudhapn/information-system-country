@@ -1,0 +1,40 @@
+<div>
+  <h1 class="text-secondary text-center">
+    <strong>Fun Fact About Countries</strong>
+  </h1>
+  <div class="row justify-content-center gap-3">
+    <button
+      type="button"
+      class="btn btn-dark col-2"
+      (click)="navigateToHome(homePageState.TOP_COUNTRIES)"
+    >
+      Go Back to Homepage
+    </button>
+    <button
+      type="button"
+      class="btn btn-dark col-2"
+      (click)="navigateToHome(homePageState.ALL_COUNTRIES)"
+    >
+      Show all of Countries
+    </button>
+  </div>
+  <div class="row d-flex justify-content-center m-3">
+    <div class="col-sm-4">
+      <div class="card card">
+        <img [src]="country.flagImageUrl" class="card-img" alt="..." />
+        <div *ngIf="country" class="card-body">
+          <h2 class="card-title fw-bold">{{ country.name | uppercase }}</h2>
+          <p><span>Capital: </span>{{ country.capital }}</p>
+          <p>
+            <span>Area: </span>{{ country.area | number }} km
+            <sup>2</sup>
+          </p>
+          <p><span>Population: </span>{{ country.population | number }}</p>
+          <p><span>GDP: </span>{{ country.gdp | number }} USD</p>
+          <p><span>Currency: </span>{{ country.currency }}</p>
+          <button id="back-button" (click)="goBack()">Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

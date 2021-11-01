@@ -1,0 +1,44 @@
+<h2><strong>Three Most Populated Countries</strong></h2>
+<div class="group">
+  <a
+    *ngFor="let country of mostPopulatedCountries"
+    class="country-unit"
+    [routerLink]="['/country-detail', country.id]"
+  >
+    <div class="country-block">
+      <h4>{{ country.name }}</h4>
+      <p>{{ country.population | number }}</p>
+      <p>Peoples</p>
+    </div>
+  </a>
+</div>
+<br />
+<h2><strong>Three Largest Countries (GDP)</strong></h2>
+<div class="group">
+  <a
+    *ngFor="let country of largestGdpCountries"
+    class="country-unit"
+    [routerLink]="['/country-detail', country.id]"
+  >
+    <div class="country-block">
+      <h4>{{ country.name }}</h4>
+      <p>${{ country.gdp | number }}</p>
+    </div>
+  </a>
+</div>
+<h2><strong>Three Largest Countries (Area)</strong></h2>
+<div class="group">
+  <a
+    *ngFor="let country of largestCountries"
+    class="country-unit"
+    [routerLink]="['/country-detail', country.id]"
+  >
+    <div class="country-block">
+      <h4>{{ country.name }}</h4>
+      <p>
+        {{ country.area | number }} km
+        <sup>2</sup>
+      </p>
+    </div>
+  </a>
+</div>
